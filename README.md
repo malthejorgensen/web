@@ -1,12 +1,12 @@
 
-
-Depedencies
+Dependencies
 -----------
-* luatex
+* [luatex][luatex]
 * Latex packages:
   * standalone (for fitting page size to figure)
   * tikz (for drawing diagrams)
-* poppler (utilities ([pdftoppm][pdftoppm]))
-* Cheetah (Python package)
+* poppler (for converting .pdf to .png: [pdftoppm][pdftoppm])
+* Cheetah (Python package: `pip install cheetah`)
 
-[pdftoppm]: http://superuser.com/questions/185880/how-to-convert-a-pdf-document-to-png "StackOverflow question on converting .pdf to .png"
+[luatex]: http://luatex.org "LuaTex homepage"
+[pdftoppm]: http://superuser.com/a/185897 "StackOverflow question on converting .pdf to .png"
