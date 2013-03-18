@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+     <title>CHAOS tutorials: Introduction to CHAOS and CHAOS.Portal</title>
+
+    <link href="css/tutorial.css" rel="stylesheet" type="text/css">
+    <!-- <script type="text/javascript" src="http://livejs.com/live.js"></script> -->
+  </head>
+  <body>
+    <div id="body-column">
+      <h1>CHAOS overview</h1>
+
+      <section>
+        <h3>What is CHAOS?</h3>
+        <p> CHAOS is a database for media content. CHAOS does not store the
+        media itself but rather references (URLs) to the media. Furthermore
+        <!-- http://stackoverflow.com/questions/176264/whats-the-difference-between-a-uri-and-a-url -->
+        CHAOS can store rich metadata (XML) for each object. CHAOS allows
+        controlled access to the media via a built-in user and folder system.
+
+        The CHAOS database can be searched via its indexer (Solr).</p>
+      </section>
+
+      <section>
+        <h3>API versioning</h3>
+        <p>
+          The current version of CHAOS (as of March 2013) is v5.<br>
+          Tutorials (including this introduction) can be assumed to be written
+          for v5 unless otherwise noted.<br>
+          CHAOS v5 was released in November 2012. The primary change from v4
+          to v5 is that output is now guaranteed to be UTF-8.<br>
+          v6 is currently in development.<br>
+        </p>
+        <aside class="note">
+          <p>
+          For v1-v5 there is no built-in way in CHAOS to obtain version
+          information, and you have to know which version you are dealing with
+          beforehand. In v6 the API will expose which versions are available.
+          </p>
+        </aside>
+      </section>
+
+      <section>
+        <h3>Objects, metadata and files</h3>
+        <p>
+        Each media reference in CHAOS is called an <code>Object</code>. Objects have a
+          number of fields, of which the most important are <code>Files</code>
+          and <code>Metadatas</code>.
+          <ul>
+            <li><code>Files</code> is a list of files (media URLs) associated
+            with the object</li>
+            <li><code>Metadatas</code> is a list of metadata (XML strings)
+            associated with the object</li>
+          </ul>
+          An overview can be seen in the figure below.
+        </p>
+        <img src="img/tutorial/chaos_objects.png" alt="Diagram of the CHAOS
+        primary objects">
+
+        <table>
+          <thead>
+            <tr>
+              <th>Property name</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>GUID</td>
+              <td>Every object has a unique id (a <a
+                  href="http://en.wikipedia.org/wiki/GUID" title="Wikipedia:
+                  GUID">GUID</a>)</td>
+            </tr>
+            <tr>
+              <td>ObjectTypeID</td>
+              <td>A type of the object</td>
+            </tr>
+            <tr>
+              <td>DateCreated</td>
+              <td>The creation date of the object</td>
+            </tr>
+            <tr>
+              <td>Metadatas</td>
+              <td>A list of metadata objects (Metadata)</td>
+            </tr>
+            <tr>
+              <td>Files</td>
+              <td>A list of file objects (FileInfo)</td>
+            </tr>
+            <tr>
+              <td>ObjectRelations</td>
+              <td>A list of relation objects</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table>
+          <caption>
+            <p>Properties of a file</p>
+          </caption>
+          <thead>
+            <tr>
+              <th>Property name</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>FormatCategory</td>
+              <td>Picture, Movie, Sound, Document</td>
+            </tr>
+            <tr>
+              <td>Format</td>
+              <td>Picture: Thumb
+                  Picture: Large
+                  ...., Movie, Sound, Document</td>
+            </tr>
+            <tr>
+              <td>ObjectTypeID</td>
+              <td>A type of the object</td>
+            </tr>
+            <tr>
+              <td>DateCreated</td>
+              <td>The creation date of the object</td>
+            </tr>
+            <tr>
+              <td>Metadatas</td>
+              <td>A list of metadata objects (Metadata)</td>
+            </tr>
+            <tr>
+              <td>Files</td>
+              <td>A list of file objects (FileInfo)</td>
+            </tr>
+            <tr>
+              <td>ObjectRelations</td>
+              <td>A list of relation objects</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          Every metadata XML-document has a related metadata schema.
+
+          Furthermore objects can have relations to other objects.
+        </p>
+      </section>
+
+      <section>
+        <h3>Object retrieval and search</h3>
+        <p>
+          The CHAOS database is indexed in a Apache Solr index, and searching
+          and general retrieval is done through this index.
+
+          You then search The metadata fields of the objects in the database are
+          specified by their GUID, so somefield_guid:searchstring
+
+          searching in different fields can be combined with the AND and OR
+          keywords and conditions can be grouped with parenthesis.
+
+          Retrieving a single object can be done by "searching" on the GUID
+          field: GUID:object_guid and multiple objects can be retrieved by
+          combining guid searches: GUID:object1_guid OR GUID:object2_guid
+        </p>
+      </section>
+    </div>
+  </body>
+</html>
