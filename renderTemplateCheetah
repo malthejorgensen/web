@@ -1,0 +1,26 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+from Cheetah.Template import Template
+import Cheetah
+import argparse
+
+parser = argparse.ArgumentParser()
+
+parser.add_argument('file', type=str)
+args = parser.parse_args()
+
+filt = Cheetah.Filters.EncodeUnicode()
+# print Template(filt.filter(open(args.file).read()))
+# unicode(open(args.file).read())
+#.decode('utf-8')
+
+compiler_settings = u"""
+#compiler-settings
+cheetahVarStartToken = ¢
+#end compiler-settings
+"""
+file_contents = open(args.file).read().decode('utf-8').replace('\\','\\\\').replace('\\\\#','\\#')
+
+print str(Template(compiler_settings + file_contents)).replace('\\\\','\\')
+# unicode(t).encode('utf-8')
