@@ -14,12 +14,13 @@
       <section>
         <h3>What is CHAOS?</h3>
         <p> CHAOS is a database for media content. CHAOS does not store the
-        media itself but rather references (URLs) to the media. Furthermore
+        media itself but rather references (URLs) to the media.
         <!-- http://stackoverflow.com/questions/176264/whats-the-difference-between-a-uri-and-a-url -->
-        CHAOS can store rich metadata (XML) for each object. CHAOS allows
+        CHAOS stores rich metadata (XML) about each object. Furthermore CHAOS allows
         controlled access to the media via a built-in user and folder system.
 
-        The CHAOS database can be searched via its indexer (Solr).</p>
+        And last but not least; CHAOS provides search of its database via its
+        indexer (Solr).</p>
       </section>
 
       <section>
@@ -44,21 +45,40 @@
       <section>
         <h3>Objects, metadata and files</h3>
         <p>
-        Each media reference in CHAOS is called an <code>Object</code>. Objects have a
-          number of fields, of which the most important are <code>Files</code>
-          and <code>Metadatas</code>.
+        Each media reference in CHAOS is called an <code>Object</code>. Objects
+        have a number of fields (also called properties). The two most
+        important properties are <code>Files</code> and <code>Metadatas</code>.
+        </p>
           <ul>
             <li><code>Files</code> is a list of files (media URLs) associated
             with the object</li>
             <li><code>Metadatas</code> is a list of metadata (XML strings)
             associated with the object</li>
           </ul>
+        <p>
           An overview can be seen in the figure below.
         </p>
-        <img src="img/tutorial/chaos_objects.png" alt="Diagram of the CHAOS
-        primary objects">
+
+        <p>
+          <img src="img/tutorial/chaos_objects.png" alt="Diagram of the CHAOS
+          primary objects" class="diagram">
+        </p>
+
+        <p>
+        A file has several different format specifiers.
+        In order of most general to most specific they are:
+        </p>
+        <ol>
+          <li><code>FormatType</code><br>
+          </li>
+          <li><code>FormatCategory</code></li>
+          <li><code>Format</code> and <code>FormatID</code></li>
+        </ol>
 
         <table>
+          <caption>
+            <p><code>Object</code> properties</p>
+          </caption>
           <thead>
             <tr>
               <th>Property name</th>
@@ -97,7 +117,7 @@
 
         <table>
           <caption>
-            <p>Properties of a file</p>
+            <p><code>File</code> properties</p>
           </caption>
           <thead>
             <tr>
@@ -106,6 +126,15 @@
             </tr>
           </thead>
           <tbody>
+            <tr>
+              <td>URL</td>
+              <td>Location of the file. In general the most important property
+                of the <code>File</code></td>
+            </tr>
+            <tr>
+              <td>FormatType</td>
+              <td>Picture, Movie, Sound, Document</td>
+            </tr>
             <tr>
               <td>FormatCategory</td>
               <td>Picture, Movie, Sound, Document</td>

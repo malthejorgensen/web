@@ -30,6 +30,18 @@ h2 {
   font-weight: normal;
 }
 
+img.diagram {
+  width: 300px;
+  /* http://andreasviklund.com/learn/how-to-align-images-using-css-classes/ */
+  display:block;
+  margin:10px auto;
+}
+
+table caption {
+  font-size: 14pt;
+  text-align: left;
+}
+
 div#index {
   /* position: absolute; */
   /* width: 145px; */
