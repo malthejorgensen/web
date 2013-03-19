@@ -36,6 +36,9 @@ img.diagram {
   display:block;
   margin:10px auto;
 }
+img.diagram.org-chart {
+  width: 500px;
+}
 
 table caption {
   font-size: 14pt;
