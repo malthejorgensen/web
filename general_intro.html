@@ -13,14 +13,22 @@
 
       <section>
         <h3>What is CHAOS?</h3>
-        <p> CHAOS is a database for media content. CHAOS does not store the
-        media itself but rather references (URLs) to the media.
+        <p> CHAOS is a database for media content.<br>
+        CHAOS does not store the media itself but rather references (URLs) to the media
         <!-- http://stackoverflow.com/questions/176264/whats-the-difference-between-a-uri-and-a-url -->
-        CHAOS stores rich metadata (XML) about each object. Furthermore CHAOS allows
-        controlled access to the media via a built-in user and folder system.
+        and metadata (XML) about it.
 
-        And last but not least; CHAOS provides search of its database via its
-        indexer (Solr).</p>
+        <!-- Furthermore CHAOS allows controlled access to the media via a built&#45;in -->
+        <!-- user and folder system.  And last but not least; CHAOS provides search -->
+        <!-- of its database via its -->
+        <!-- indexer (Solr). -->
+        </p>
+
+        <p>
+        CHAOS is usually accessed through its webinterface CHAOS.Portal. There
+        exists PHP and Javascript libraries that wrap the CHAOS.Portal API
+        into simple function calls on Javascript or PHP objects.
+        </p>
       </section>
 
       <p>
@@ -48,7 +56,7 @@
       </section>
 
       <section>
-        <h3>Objects, metadata and files</h3>
+        <h3>Objects</h3>
         <p>
         Each media reference in CHAOS is called an <code>Object</code>. Objects
         have a number of fields (also called properties). The two most
@@ -69,20 +77,9 @@
           primary objects" class="diagram">
         </p>
 
-        <p>
-        A file has several different format specifiers.
-        In order of most general to most specific they are:
-        </p>
-        <ol>
-          <li><code>FormatType</code><br>
-          </li>
-          <li><code>FormatCategory</code></li>
-          <li><code>Format</code> and <code>FormatID</code></li>
-        </ol>
-
-        <table>
+        <table class="properties">
           <caption>
-            <p><code>Object</code> properties</p>
+            <code>Object</code> properties
           </caption>
           <thead>
             <tr>
@@ -115,14 +112,27 @@
             </tr>
             <tr>
               <td>ObjectRelations</td>
-              <td>A list of relation objects</td>
+              <td>A list of objects related to this object</td>
             </tr>
           </tbody>
         </table>
 
-        <table>
+        <h3>Files</h3>
+        <p>
+        A file has several different format specifiers.
+        In order of most general to most specific they are:
+        </p>
+        <ol>
+          <li><code>FormatType</code><br>
+          </li>
+          <li><code>FormatCategory</code></li>
+          <li><code>Format</code> and <code>FormatID</code></li>
+        </ol>
+
+
+        <table class="properties">
           <caption>
-            <p><code>File</code> properties</p>
+            <code>File</code> properties
           </caption>
           <thead>
             <tr>
@@ -150,33 +160,31 @@
                   Picture: Large
                   ...., Movie, Sound, Document</td>
             </tr>
-            <tr>
-              <td>ObjectTypeID</td>
-              <td>A type of the object</td>
-            </tr>
-            <tr>
-              <td>DateCreated</td>
-              <td>The creation date of the object</td>
-            </tr>
-            <tr>
-              <td>Metadatas</td>
-              <td>A list of metadata objects (Metadata)</td>
-            </tr>
-            <tr>
-              <td>Files</td>
-              <td>A list of file objects (FileInfo)</td>
-            </tr>
-            <tr>
-              <td>ObjectRelations</td>
-              <td>A list of relation objects</td>
-            </tr>
+            <!-- <tr> -->
+            <!--   <td>DateCreated</td> -->
+            <!--   <td>The creation date of the object</td> -->
+            <!-- </tr> -->
           </tbody>
         </table>
 
+        <h3>Metadata</h3>
         <p>
           Every metadata XML-document has a related metadata schema.
 
-          Furthermore objects can have relations to other objects.
+          Things such the title and description of the object is typically
+          stored in the metadata.
+          This means that you can expect to find elements in the XML, that
+          contain e.g. the name of object.
+
+        <h3>Related objects</h3>
+        <p>
+          An object can have relations to other objects.
+          These related objects can be found in the <code>ObjectRelations</code>
+          property of the <code>Object</code>.
+          <br>
+          The related objects are regular <code>Object</code>s and should be
+          treated as such, although you probably want to display them
+          differently to the user (in comparison to the primary object).
         </p>
       </section>
 
@@ -186,11 +194,11 @@
           The CHAOS database is indexed in a Apache Solr index, and searching
           and general retrieval is done through this index.
 
-          You then search The metadata fields of the objects in the database are
-          specified by their GUID, so somefield_guid:searchstring
+          <!-- You then search the metadata fields of the objects in the database are -->
+          <!-- specified by their GUID, so somefield_guid:searchstring -->
 
-          searching in different fields can be combined with the AND and OR
-          keywords and conditions can be grouped with parenthesis.
+          <!-- searching in different fields can be combined with the AND and OR -->
+          <!-- keywords and conditions can be grouped with parenthesis. -->
 
           Retrieving a single object can be done by "searching" on the GUID
           field: GUID:object_guid and multiple objects can be retrieved by
