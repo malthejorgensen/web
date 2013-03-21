@@ -10,12 +10,21 @@ body {
   text-align: center;
 }
 
-/* Centered div: http://stackoverflow.com/questions/114543/how-to-center-a-div-in-a-div-horizontallyhttp://stackoverflow.com/questions/114543/how-to-center-a-div-in-a-div-horizontally */
+/* Centered div: http://stackoverflow.com/questions/114543/how-to-center-a-div-in-a-div-horizontally */
 div#body-column {
   display: inline-block;
   width: 600px;
   text-align: left;
   position: relative;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(34, 34, 204);
+}
+a:visited {
+  /* color: #0000FF; */
+  color: #0088CC;
 }
 
 h1 {
