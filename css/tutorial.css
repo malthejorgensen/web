@@ -1,7 +1,7 @@
-@import url(http://fonts.googleapis.com/css?family=Droid+Sans);
-@import url(http://fonts.googleapis.com/css?family=PT+Sans);
+/* @import url(http://fonts.googleapis.com/css?family=Droid+Sans); */
+/* @import url(http://fonts.googleapis.com/css?family=PT+Sans); */
 @import url(http://fonts.googleapis.com/css?family=Lato);
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
+/* @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro); */
 
 body {
   font-family: 'PT Sans', 'Droid Sans', 'Lato', verdana, arial, sans-serif;
@@ -37,11 +37,15 @@ img.diagram {
   margin:10px auto;
 }
 img.diagram.org-chart {
-  width: 500px;
+  width: 571px;
 }
 
-table caption {
-  font-size: 14pt;
+table.properties {
+  /* border: 1px solid black; */
+  border-top: 1px solid black;
+}
+table.properties caption {
+  font-size: 12pt;
   text-align: left;
 }
 
