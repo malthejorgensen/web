@@ -232,11 +232,30 @@
 
           <!-- searching in different fields can be combined with the AND and OR -->
           <!-- keywords and conditions can be grouped with parenthesis. -->
-
+        </p>
+        <p>
           Retrieving a single object can be done by "searching" on the GUID
           field: GUID:object_guid and multiple objects can be retrieved by
-          combining guid searches: GUID:object1_guid OR GUID:object2_guid
+          combining guid searches: GUID:object1_guid OR GUID:object2_guid.<br>
         </p>
+        <p>
+          Here we search for<br>
+          <code>GUID:00000000-0000-0000-0000-00004e040016</code><br>
+          which becomes<br>
+          <code>GUID%3A00000000-0000-0000-0000-00004e040016</code><br>
+          inside the URL.<br>
+          <br>
+          So the full CHAOS request URL becomes:
+        </p>
+
+        <pre>
+        http://api.chaos-systems.com/v4/Object/Get?
+          query=(GUID%3A00000000-0000-0000-0000-00004e040016)&amp;
+          accessPointGUID=C4C2B8DA-A980-11E1-814B-02CEA2621172&amp;
+          pageIndex=0&amp;
+          pageSize=1&amp;
+          includeFiles=true
+        </pre>
       </section>
     </div>
   </body>
