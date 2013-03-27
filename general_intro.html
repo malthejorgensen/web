@@ -103,10 +103,6 @@
               <td>A type of the object</td>
             </tr>
             <tr>
-              <td>DateCreated</td>
-              <td>The creation date of the object</td>
-            </tr>
-            <tr>
               <td>Metadatas</td>
               <td>A list of metadata objects (Metadata)</td>
             </tr>
@@ -152,11 +148,11 @@
             </tr>
             <tr>
               <td>FormatType</td>
-              <td>Picture, Movie, Sound, Document</td>
+              <td>Image, Video, Sound, Document</td>
             </tr>
             <tr>
               <td>FormatCategory</td>
-              <td>Picture, Movie, Sound, Document</td>
+              <td>Image Thumbnail, Image Original, Movie, Sound, Document</td>
             </tr>
             <tr>
               <td>Format</td>
@@ -164,6 +160,12 @@
                   Picture: Large
                   ...., Movie, Sound, Document</td>
             </tr>
+<!-- "Format": "SMK asset thumbnail", -->
+<!-- "FormatCategory": "SMK asset thumbnail" -->
+<!-- "FormatType": "Image" -->
+<!-- "Format": "SMK video" -->
+<!-- "FormatCategory": "SMK video" -->
+<!-- "FormatType": "Video" -->
             <!-- <tr> -->
             <!--   <td>DateCreated</td> -->
             <!--   <td>The creation date of the object</td> -->
@@ -197,11 +199,12 @@
             </tr>
             <tr>
               <td>MetadataSchemaGUID</td>
-              <td>The GUID of the XML schema describing the MetadataXML XML document.</td>
+              <td>The GUID of the XML schema describing the
+                <code>MetadataXML</code> XML document.</td>
             </tr>
             <tr>
               <td>MetadataXML</td>
-              <td>The metadata</td>
+              <td>The metadata as an XML document</td>
             </tr>
           </tbody>
         </table>
