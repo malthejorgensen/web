@@ -250,7 +250,16 @@
         <p>
           The CHAOS database is indexed in a Apache Solr index, and searching
           and general retrieval is done through this index.
+        </p>
 
+        <p>
+          To search the index you specify some query string and send it to
+          CHAOS which sends it on to Solr. The Solr query syntax is based on the
+          <a href="http://lucene.apache.org/core/3_6_0/queryparsersyntax.html"
+             title="An introduction to the Lucene query syntax">Lucene query syntax</a> .
+          It is in general not necessarry to know the query syntax – there are
+          built-in utility functions in the Portal.Client libraries and in CHAOS to handle most
+          common use cases.
           <!-- You then search the metadata fields of the objects in the database are -->
           <!-- specified by their GUID, so somefield_guid:searchstring -->
 
