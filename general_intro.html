@@ -6,6 +6,30 @@
 
     <link href="css/tutorial.css" rel="stylesheet" type="text/css">
     <!-- <script type="text/javascript" src="http://livejs.com/live.js"></script> -->
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+
+        $('pre.link').click(function() {
+          var url = $(this).text().replace(/\s/g, '');
+          // alert(url);
+          window.location = url;
+        });
+
+        var color = '#BBB';
+        var $link_text = $('<div>link</div>');
+        $link_text.css('float', 'right');
+        $link_text.css('background-color', color);
+        $link_text.css('font-size', '10px');
+        $link_text.css('padding', '2px');
+
+
+        $('pre.link').css('border', '1px solid ' + color);
+        $('pre.link').css('margin-bottom', '0px');
+        // $('pre.link').css('clear', 'right');
+        $('pre.link').after($link_text)
+      });
+    </script>
   </head>
   <body>
     <div id="body-column">
@@ -248,14 +272,13 @@
           So the full CHAOS request URL becomes:
         </p>
 
-        <pre>
-        http://api.chaos-systems.com/v4/Object/Get?
+        <pre class="link">
+        http://api.chaos-systems.com/v5/Object/Get?
           query=(GUID%3A00000000-0000-0000-0000-00004e040016)&amp;
           accessPointGUID=C4C2B8DA-A980-11E1-814B-02CEA2621172&amp;
           pageIndex=0&amp;
           pageSize=1&amp;
-          includeFiles=true
-        </pre>
+          includeFiles=true</pre>
       </section>
     </div>
   </body>
