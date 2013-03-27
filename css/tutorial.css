@@ -20,11 +20,11 @@ div#body-column {
 
 a {
   text-decoration: none;
-  color: rgb(34, 34, 204);
+  color: #0088CC;
 }
 a:visited {
   /* color: #0000FF; */
-  color: #0088CC;
+  color: rgb(34, 34, 204);
 }
 
 h1 {
