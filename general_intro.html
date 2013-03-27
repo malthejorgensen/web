@@ -143,15 +143,37 @@
 
         <h3>Files</h3>
         <p>
-        A file has several different format specifiers.
-        In order of most general to most specific they are:
+          A file consists of a filename, a media reference (URL) and some type
+          specifications.
+          The URL can be used as-is, meaning that you don't have to concatenate
+          the URL and the filename.
+        </p>
+        <p>
+          A file has several different format specifiers.
+          In order of most general to most specific they are:
         </p>
         <ol>
-          <li><code>FormatType</code><br>
+          <li><span class="property">FormatType</span> is the type of the media: an image, a
+          video, sound etc.<br>
           </li>
-          <li><code>FormatCategory</code></li>
-          <li><code>Format</code> and <code>FormatID</code></li>
+          <li><span class="property">FormatCategory</span> specifies in what context the media
+          should be used. For example it could specify <code>Image Thumbnail</code> or
+          <code>Image
+          Original</code> so that a page showing many images should use the thumbnail
+          (<code>Image Thumbnail</code>) whereas a page dedicated to that specific image should use
+          the original (<code>Image Original</code>).</li>
+          <li><span class="property">Format</span> and <span
+          class="property">FormatID</span> are very specific:
+          for example <code>Image JPEG 200x200</code>.</li>
         </ol>
+        <aside class="note">
+          <p>
+            This hierarchy is still under discussion and is subject to change.
+            Furthermore no current CHAOS database lives up to this standard and
+            thus you should ask or check your data to find how these format
+            specifications have been used in your particular database.
+          </p>
+        </aside>
 
 
         <table class="properties">
@@ -176,13 +198,12 @@
             </tr>
             <tr>
               <td>FormatCategory</td>
-              <td>Image Thumbnail, Image Original, Movie, Sound, Document</td>
+              <td>Image Thumbnail, Image Original, Movie Clip, Movie Original
+              etc.</td>
             </tr>
             <tr>
               <td>Format</td>
-              <td>Picture: Thumb
-                  Picture: Large
-                  ...., Movie, Sound, Document</td>
+              <td>Image JPEG 320x480, Movie AVI 378x210 etc.</td>
             </tr>
 <!-- "Format": "SMK asset thumbnail", -->
 <!-- "FormatCategory": "SMK asset thumbnail" -->

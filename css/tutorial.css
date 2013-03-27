@@ -136,7 +136,10 @@ div.try-code {
   width: 10em;
 }
 
-p code, dl code {
+span.property {
+  font-weight: bold;
+}
+p code, dl code, li code {
   background-color: #E3E3E3;
 }
 code.line {
