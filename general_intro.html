@@ -143,7 +143,7 @@
 
         <h3>Files</h3>
         <p>
-          A file consists of a filename, a media reference (URL) and some type
+          A file consists of a filename, a URL and some type
           specifications.
           The URL can be used as-is, meaning that you don't have to concatenate
           the URL and the filename.
@@ -193,6 +193,10 @@
                 of the <code>File</code></td>
             </tr>
             <tr>
+              <td>Filename</td>
+              <td>The filename of the particular file</td>
+            </tr>
+            <tr>
               <td>FormatType</td>
               <td>Image, Video, Sound, Document</td>
             </tr>
@@ -224,8 +228,8 @@
 
           Things such the title and description of the object is typically
           stored in the metadata.
-          This means that you can expect to find elements in the XML, that
-          contain e.g. the name of object.
+          This means that you can expect to find elements in the XML that
+          contain the name of object, a description and so on.
         </p>
         <table class="properties">
           <caption>
@@ -270,7 +274,7 @@
         <h3>Object retrieval and search</h3>
         <p>
           The CHAOS database is indexed in a Apache Solr index, and searching
-          and general retrieval is done through this index.
+          but also retrieving objects in general is done through this index.
         </p>
 
         <p>
