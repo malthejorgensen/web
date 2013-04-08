@@ -6,6 +6,28 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="css/style.css" rel="stylesheet" media="screen">
+
+    <!-- jQuery CDN -->
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+    <script>
+      $(document).ready(function() {
+        var loc_regex = /^https?:\/\/([^\.]+)\.github\.(com|io)/;
+        // var loc_regex = /^file:\/\/([^\.]+)/;
+        var loc = new String(window.location);
+        var matches = loc.match(loc_regex);
+        if (matches !== null) {
+          $('div.code-introductions a').each(function() {
+            var href = $(this).attr('href');
+
+            var cc_url = /chaos-community.github.com/;
+            href = href.replace(cc_url, matches[1] + '.github.com');
+
+            $(this).attr('href', href);
+          });
+        }
+      });
+    </script>
   </head>
   <body>
 
